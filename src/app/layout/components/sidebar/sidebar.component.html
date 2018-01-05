@@ -1,0 +1,19 @@
+<div class="logo" routerLink="/dashboard">
+</div>
+<ul nz-menu [nzTheme]="'dark'" nzClickActive="false" [nzMode]="isCollapsed?'vertical':'inline'">
+  <li nz-submenu *ngFor="let menu of menulist | orderBy: 'Seq'">
+    <span title>
+      <i class="anticon anticon-user"></i>
+      <span class="nav-text">{{menu.Name}}</span>
+    </span>
+    <ul>
+      <li nz-menu-item *ngFor="let submenu of menu.Item | orderBy: 'Seq'" routerLink="{{submenu.Url}}" [routerLinkActive]="['ant-menu-item-selected']">{{submenu.Name}}</li>
+    </ul>
+  </li>
+  <!-- <li nz-menu-item>
+    <span>
+      <i class="anticon anticon-file"></i>
+      <span class="nav-text">File</span>
+    </span>
+  </li> -->
+</ul>

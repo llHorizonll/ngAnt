@@ -1,0 +1,10 @@
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="child.isCollapsed" [nzTrigger]="null">
+    <app-sidebar></app-sidebar>
+  </nz-sider>
+  <nz-layout>
+    <app-header #child></app-header>
+    <router-outlet></router-outlet>
+    <nz-footer>Footer</nz-footer>
+  </nz-layout>
+</nz-layout>

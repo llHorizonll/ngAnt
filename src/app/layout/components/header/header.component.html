@@ -1,0 +1,20 @@
+<nz-header>
+  <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
+  <ul nz-menu [nzTheme]="'dark'" [nzClickActive]="false" [nzMode]="'horizontal'" style="line-height: 44px;float: right!important;margin-right: -15px;">
+    <li nz-menu-item>nav 1 </li>
+    <li nz-menu-item>nav 2 </li>
+    <li nz-menu-item>
+      <nz-dropdown [nzTrigger]="'click'">
+        <button nz-button nz-dropdown>
+          <span>{{user}}</span>
+          <i class="anticon anticon-down"></i>
+        </button>
+        <ul nz-menu>
+          <li nz-menu-item>1st menu item</li>
+          <li nz-menu-item>2nd menu item</li>
+          <li nz-menu-item [routerLink]="['/login']" (click)="onLoggedout()">Logout</li>
+        </ul>
+      </nz-dropdown>
+    </li>
+  </ul>
+</nz-header>
